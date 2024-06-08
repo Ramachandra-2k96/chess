@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Table</title>
+    <style>
+        /* CSS styles */
+        table {
+            margin: 5% auto;
+            width: 80%;
+            max-width: 600px;
+            border-collapse: collapse;
+            border-radius: 10px;
+            border-collapse: collapse;
+        }
+        /* Alternating background colors for the cells */
+        tr:nth-child(odd) td:nth-child(even),
+        tr:nth-child(even) td:nth-child(odd) {
+            background-color: #3b791e;
+        }
+        td {
+            width: 12.5%;
+            height: 70px;
+            border: 1px solid #000;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            box-sizing: border-box;
+            background-color: #F2F2F2;
+            font-size: 40px;
+        }
+        td div{
+            z-index: 1;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        td div{
+            margin: 0;
+        }
+        td:hover {
+            background-color: #F2F2F2;
+        }
+        .chess-piece {
+            font-family: Arial, sans-serif;
+            font-size: 48px;
+            line-height: 1;
+            transition: all 1.5s ease;
+        }
+        
+        /* Styles for specific pieces */
+        .rook:before {
+            content: "\265C"; /* Unicode character for rook */
+        }
+        
+        .knight:before {
+            content: "\265E"; /* Unicode character for knight */
+        }
+        
+        .bishop:before {
+            content: "\265D"; /* Unicode character for bishop */
+        }
+        
+        .queen:before {
+            content: "\265B"; /* Unicode character for queen */
+        }
+        
+        .king:before {
+            content: "\265A"; /* Unicode character for king */
+        }
+        
+        .pawn:before {
+            content: "\265F"; /* Unicode character for pawn */
+        }
+        
+        /* Styles for white pieces */
+        .white {
+            color: #ffffff; /* White color */
+            text-shadow: 0px 6px 19px black;
+        }
+        
+        /* Styles for black pieces */
+        .black {
+            color: #000000; /* Black color */
+            text-shadow: 0px 6px 19px white;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- Table element -->
+    <table id="myTable"></table>
+    <button onclick="movePiece()">Move Piece</button>
+    <!-- Script to generate the table dynamically -->
+    <script src="script.js"></script>
+</body>
+</html>
